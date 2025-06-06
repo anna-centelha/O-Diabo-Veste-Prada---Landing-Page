@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap');
+
+/* --- General Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark-charcoal: #1C1C1C;
+    --color-light-gray: #F5F5F5;
+    --color-white: #FFFFFF;
+    --color-deep-red: #A32A2A; /* More sophisticated red */
+    --color-gold: #FFD700;
+    --font-playfair: 'Playfair Display', serif;
+    --font-inter: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-inter);
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-light-gray);
+    line-height: 1.8; /* Increased for better readability */
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-playfair);
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+section {
+    padding: 6rem 4rem; /* More generous padding */
+    position: relative;
+    z-index: 1; /* Ensure sections stack correctly */
+}
+
+/* --- Intro Section --- */
+.intro {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('img/miranda-andrea.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for subtle effects */
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for text legibility */
+    z-index: 0;
+}
+
+.typing-text {
+    font-family: var(--font-playfair);
+    font-size: 4.5rem; /* Larger font size */
+    font-style: italic;
+    color: var(--color-gold); /* Gold for a luxury feel */
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Subtle glow */
+    z-index: 1;
+    position: relative;
+    line-height: 1.2;
+    max-width: 80%; /* Limit width for multi-line quotes */
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.3); /* Slight background for readability */
+    border-radius: 10px;
+}
+
+/* --- Highlight Section --- */
+.highlight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--color-light-gray); /* Lighter background for contrast */
+    color: var(--color-dark-charcoal); /* Dark text on light background */
+    padding: 8rem 4rem; /* More vertical padding */
+}
+
+.highlight-text {
+    flex: 1;
+    padding: 2rem;
+    min-width: 300px; /* Ensure proper wrapping on smaller screens */
+}
+
+.highlight-text h1 {
+    font-size: 4rem; /* Larger, more impactful heading */
+    margin-bottom: 1.5rem;
+    color: var(--color-deep-red); /* Title in deep red */
+    position: relative;
+    display: inline-block; /* For the underline effect */
+}
+
+.highlight-text h1::after {
+    content: '';
+    display: block;
+    width: 60%; /* Underline length */
+    height: 3px;
+    background-color: var(--color-deep-red);
+    margin-top: 10px;
+}
+
+.highlight-text p {
+    font-size: 1.3rem; /* Slightly larger paragraph text */
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--color-dark-charcoal);
+}
+
+.tags span {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--color-dark-charcoal);
+    color: var(--color-dark-charcoal);
+    padding: 8px 15px; /* Larger tags */
+    border-radius: 25px; /* More rounded */
+    margin: 0 10px 10px 0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tags span:hover {
+    background-color: var(--color-deep-red);
+    border-color: var(--color-deep-red);
+    color: var(--color-white);
+    transform: translateY(-3px); /* Subtle lift */
+}
+
+.buttons {
+    margin-top: 30px; /* More space */
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 15px 25px; /* Larger buttons */
+    border-radius: 30px; /* Pill-shaped buttons */
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.assistir {
+    background-color: var(--color-deep-red);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 5px 15px rgba(163, 42, 42, 0.4);
+}
+
+.assistir:hover {
+    background-color: #7a2020; /* Slightly darker red */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(163, 42, 42, 0.6);
+}
+
+.lista {
+    background-color: transparent;
+    border: 2px solid var(--color-dark-charcoal); /* Thicker border */
+    color: var(--color-dark-charcoal);
+}
+
+.lista:hover {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.highlight-image {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    min-width: 300px;
+}
+
+.highlight-image img {
+    max-width: 100%;
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+.highlight-image img:hover {
+    transform: scale(1.02); /* Subtle zoom */
+}
+
+/* --- Trailer Section --- */
+.trailer {
+    background-color: var(--color-dark-charcoal);
+    padding: 6rem 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+}
+
+.trailer h2 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: var(--color-gold); /* Gold for trailer title */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 1000px; /* Limit video width */
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background-image: url('img/trailer-placeholder.jpg'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* --- Elenco (Actors) Section --- */
+.atores {
+    padding: 6rem 4rem;
+    background-color: var(--color-light-gray); /* Lighter background */
+    color: var(--color-dark-charcoal);
+    text-align: center;
+}
+
+.atores h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--color-deep-red); /* Title in deep red */
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* More space between images */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria img {
+    width: 220px; /* Slightly larger actor images */
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images fill space without distortion */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    border: 3px solid transparent; /* Prepare for border hover */
+}
+
+.galeria img:hover {
+    transform: translateY(-10px) scale(1.03); /* More pronounced lift */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border-color: var(--color-deep-red); /* Red border on hover */
+}
+
+/* --- Revista (Magazine) Section --- */
+.revista {
+    background-color: var(--color-dark-charcoal);
+    padding: 6rem 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.revista h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--color-gold); /* Gold for magazine title */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.revista-slider {
+    display: flex;
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    padding: 2rem 0; /* More padding top/bottom */
+    gap: 2rem; /* Increased gap */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.revista-slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.revista-slider img {
+    scroll-snap-align: center; /* Snap to center of image */
+    width: 350px; /* Larger magazine images */
+    height: 450px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    border: 3px solid transparent; /* Prepare for border hover */
+}
+
+.revista-slider img:hover {
+    transform: translateY(-10px) scale(1.03); /* Similar hover to actors */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-gold); /* Gold border on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .highlight {
+        flex-direction: column;
+        padding: 5rem 3rem;
+    }
+    .highlight-text, .highlight-image {
+        padding: 1.5rem;
+        flex: none; /* Remove flex grow on smaller screens */
+        width: 100%; /* Take full width */
+    }
+    .highlight-text h1 {
+        font-size: 3.5rem;
+    }
+    .intro {
+        font-size: 3.5rem;
+    }
+    .galeria, .revista-slider {
+        gap: 1.5rem;
+    }
+    .galeria img {
+        width: 180px;
+        height: 250px;
+    }
+    .revista-slider img {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 2rem;
+    }
+    .intro {
+        font-size: 2.8rem;
+    }
+    .typing-text {
+        font-size: 3.5rem;
+        max-width: 90%;
+    }
+    .highlight-text h1 {
+        font-size: 3rem;
+    }
+    .highlight-text p {
+        font-size: 1.1rem;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .buttons button {
+        width: 100%;
+    }
+    .trailer h2, .atores h2, .revista h2 {
+        font-size: 2.5rem;
+    }
+    .galeria img {
+        width: 150px;
+        height: 220px;
+    }
+    .revista-slider img {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro {
+        font-size: 2.2rem;
+    }
+    .typing-text {
+        font-size: 2.5rem;
+        padding: 0.8rem;
+    }
+    .highlight-text h1 {
+        font-size: 2.5rem;
+    }
+    .highlight-text p {
+        font-size: 1rem;
+    }
+    .tags span {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .buttons button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    .trailer h2, .atores h2, .revista h2 {
+        font-size: 2rem;
+    }
+    .galeria img {
+        width: 120px;
+        height: 180px;
+    }
+    .revista-slider img {
+        width: 200px;
+        height: 300px;
+    }
+}

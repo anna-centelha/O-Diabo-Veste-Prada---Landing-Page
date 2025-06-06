@@ -1,0 +1,15 @@
+{
+  "name": "diabo-veste-prada-landing",
+  "version": "1.0.0",
+  "description": "Landing page do filme O Diabo Veste Prada, com um toque de revista de moda e animações.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Seu Nome",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0"
+  }
+}
